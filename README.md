@@ -1,14 +1,22 @@
-Modpack - 3d Armor [0.4.5]
+Modpack - 3d Armor [0.5.0]
 ==========================
+
+[mod] Multi Skins [multiskin]
+-----------------------------
+
+depends: default
+
+Common multi-layer player texturing api used by the modpack.
+
 
 [mod] Visible Player Armor [3d_armor]
 -------------------------------------
 
-Minetest Version: 0.4.13
+Minetest Version: 0.4.14
 
 Game: minetest_game and many derivatives
 
-Depends: default
+Depends: multiskin
 
 Recommends: inventory_plus or unified_inventory (use only one)
 
@@ -32,7 +40,7 @@ see armor.conf.example for all available options.
 [mod] Visible Wielded Items [wieldview]
 ---------------------------------------
 
-Depends: 3d_armor
+Depends: multiskin
 
 Makes hand wielded items visible to other players.
 
@@ -49,7 +57,7 @@ If you do not want shields then simply remove the shields folder from the modpac
 
 Depends: 3d_armor, technic_worldgen
 
-Adds tin, silver and technic materials to 3d_armor.
+Adds lead, tin, silver and technic materials to 3d_armor.
 Requires technic (technic_worldgen at least) mod.
 
 [mod] Hazmat Suit [hazmat_suit]
@@ -57,8 +65,10 @@ Requires technic (technic_worldgen at least) mod.
 
 Depends: 3d_armor, technic
 
-Adds hazmat suit to 3d_armor. It protects rather well from fire (if enabled in configuration) and radiation, and it has built-in oxygen supply.
-Requires technic mod.
+Adds hazmat suit to 3d_armor. It protects from fire (if enabled) and radiation*
+Also features a built-in oxygen supply for underwater breathing.
+
+*Requires patched version of [minetest-technic](https://github.com/minetest-technic/technic/pull/275) to have any effect.
 
 [mod] 3d Armor Stand [3d_armor_stand]
 -------------------------------------
