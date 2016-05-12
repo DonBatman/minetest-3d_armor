@@ -202,6 +202,7 @@ minetest.register_node("3d_armor_stand:locked_armor_stand", {
 	after_place_node = function(pos, placer)
 		minetest.add_entity(pos, "3d_armor_stand:armor_entity")
 		local meta = minetest.get_meta(pos)
+		minetest.chat_send_all(placer:get_player_name())
 		meta:set_string("owner", placer:get_player_name() or "")
 		meta:set_string("infotext", "Armor Stand (owned by " ..
 		meta:get_string("owner") .. ")")

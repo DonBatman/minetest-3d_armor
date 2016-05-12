@@ -31,7 +31,9 @@ end
 
 for i, j in pairs(parts) do
 	for k, v in pairs(stats) do
-		if j and v then
+	
+		if j.place == "head" then 
+	
 			minetest.register_tool("technic_armor:"..i.."_"..k, {
 				description = v.name.." "..j.name,
 				inventory_image = "technic_armor_inv_"..i.."_"..k..".png",
@@ -39,7 +41,40 @@ for i, j in pairs(parts) do
 					armor_head = math.floor(j.level * v.armor),
 					armor_heal = v.heal,
 					armor_use = v.use,
-					armor_radiation = math.floor(j.radlevel * v.radiation),
+					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+				},
+			})
+		elseif j.place == "torso" then
+			minetest.register_tool("technic_armor:"..i.."_"..k, {
+				description = v.name.." "..j.name,
+				inventory_image = "technic_armor_inv_"..i.."_"..k..".png",
+				groups = {
+					armor_torso = math.floor(j.level * v.armor),
+					armor_heal = v.heal,
+					armor_use = v.use,
+					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+				},
+			})
+		elseif j.place == "legs" then
+			minetest.register_tool("technic_armor:"..i.."_"..k, {
+				description = v.name.." "..j.name,
+				inventory_image = "technic_armor_inv_"..i.."_"..k..".png",
+				groups = {
+					armor_legs = math.floor(j.level * v.armor),
+					armor_heal = v.heal,
+					armor_use = v.use,
+					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+				},
+			})
+		elseif j.place == "feet" then
+			minetest.register_tool("technic_armor:"..i.."_"..k, {
+				description = v.name.." "..j.name,
+				inventory_image = "technic_armor_inv_"..i.."_"..k..".png",
+				groups = {
+					armor_feet = math.floor(j.level * v.armor),
+					armor_heal = v.heal,
+					armor_use = v.use,
+					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
 				},
 			})
 		end
