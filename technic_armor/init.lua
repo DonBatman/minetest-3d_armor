@@ -41,7 +41,7 @@ for i, j in pairs(parts) do
 					armor_head = math.floor(j.level * v.armor),
 					armor_heal = v.heal,
 					armor_use = v.use,
-					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+					--armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
 				},
 			})
 		elseif j.place == "torso" then
@@ -52,7 +52,7 @@ for i, j in pairs(parts) do
 					armor_torso = math.floor(j.level * v.armor),
 					armor_heal = v.heal,
 					armor_use = v.use,
-					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+					--armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
 				},
 			})
 		elseif j.place == "legs" then
@@ -63,7 +63,7 @@ for i, j in pairs(parts) do
 					armor_legs = math.floor(j.level * v.armor),
 					armor_heal = v.heal,
 					armor_use = v.use,
-					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+					--armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
 				},
 			})
 		elseif j.place == "feet" then
@@ -74,7 +74,7 @@ for i, j in pairs(parts) do
 					armor_feet = math.floor(j.level * v.armor),
 					armor_heal = v.heal,
 					armor_use = v.use,
-					armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
+					--armor_radiation = math.floor(j.radlevel * v.radiation) or 0,
 				},
 			})
 		end
